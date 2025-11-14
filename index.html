@@ -2,9 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
- 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>SkillGrade</title>
     <style>
         * {
@@ -13,42 +11,19 @@
             box-sizing: border-box;
         }
 
-        
         .container {
-    width: 100%;
-    max-width: 1200px;
-    margin: auto;
-}
-img {
-    max-width: 100%;
-    height: auto;
-}
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-}
-@media (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
-        text-align: center;
-    }
+            width: 100%;
+            max-width: 1200px;
+            margin: auto;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
 
-    .nav-links {
-        flex-direction: column;
-        gap: 10px;
-    }
-}
-@media (min-width: 769px) {
-    .navbar {
-        flex-direction: row;
-    }
-}
-
-
-
-        
+        /* YEH AAPKA PURANA/UNUSED CSS THA, MAINE HATA DIYA HAI */
+        /* @media (max-width: 768px) { .navbar { ... } } */
+        /* @media (min-width: 769px) { .navbar { ... } } */
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -72,19 +47,19 @@ img {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            position: relative; /* Dropdown ke liye zaroori */
         }
         .logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
 
-.logo-img {
-    height: 52px;
-    width: 52px;
-    object-fit: contain;
-}
-
+        .logo-img {
+            height: 52px;
+            width: 52px;
+            object-fit: contain;
+        }
 
         .logo {
             font-size: 1.8rem;
@@ -121,235 +96,57 @@ img {
             color: #667eea;
         }
 
-        /* Main Content */
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-
-        .header {
-            margin-bottom: 3rem;
-        }
-
-        .header h1 {
-            font-size: 3rem;
-            color: #1a202c;
-            margin-bottom: 1rem;
-        }
-
-        .header p {
-            font-size: 1.25rem;
-            color: #4a5568;
-        }
-
-        .section {
-            margin-bottom: 4rem;
-        }
-
-        .section-title {
-            display: flex;
-            align-items: center;
-            font-size: 2rem;
-            font-weight: bold;
-            color: #1a202c;
-            margin-bottom: 2rem;
-        }
-
-        .section-title svg {
-            margin-right: 1rem;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .card {
-            border-radius: 12px;
-            padding: 1.5rem;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-            border: 2px solid;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 15px rgba(0,0,0,0.2);
-        }
-
-        .card-icon {
-            width: 64px;
-            height: 64px;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1rem;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-
-        .card-icon svg {
-            width: 32px;
-            height: 32px;
-            color: white;
-        }
-
-        .card h3 {
-            font-size: 1.25rem;
-            font-weight: bold;
-            color: #1a202c;
-            margin-bottom: 1rem;
-        }
-
-        .apply-btn {
-            width: 100%;
-            padding: 0.75rem 1.5rem;
-            border: none;
-            border-radius: 8px;
-            font-size: 1rem;
-            font-weight: 600;
-            color: white;
+        /* === NEW: HAMBURGER MENU === */
+        .hamburger-menu {
+            display: none; /* Desktop par hide */
             cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            flex-direction: column;
+            gap: 5px;
+            padding: 10px;
         }
 
-        .apply-btn:hover:not(:disabled) {
-            opacity: 0.9;
-            transform: scale(1.05);
-        }
-
-        .apply-btn:active:not(:disabled) {
-            transform: scale(0.95);
-        }
-
-        .apply-btn:disabled {
-            background: #a0aec0 !important;
-            cursor: not-allowed;
-        }
-
-        /* Footer */
-        footer {
-            background: #1a202c;
-            color: white;
-            margin-top: 4rem;
-        }
-
-        .footer-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 3rem 2rem;
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .footer-column h3 {
-            font-size: 1.25rem;
-            margin-bottom: 1rem;
-        }
-
-        .footer-column p,
-        .footer-column a {
-            color: #a0aec0;
-            font-size: 0.9rem;
-            line-height: 1.6;
-            text-decoration: none;
-        }
-
-        .footer-column a:hover {
-            color: white;
-        }
-
-        .footer-column ul {
-            list-style: none;
-        }
-
-        .footer-column ul li {
-            margin-bottom: 0.5rem;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 0.5rem;
-            margin-bottom: 0.75rem;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .social-btn {
-            background: #2d3748;
-            padding: 0.75rem;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
+        .hamburger-menu span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: #4a5568; /* Link color se match */
+            border-radius: 3px;
             transition: all 0.3s ease;
         }
 
-        .social-btn:hover {
-            background: #667eea;
-        }
-
-        .newsletter {
-            margin-top: 1.5rem;
-        }
-
-        .newsletter input {
-            padding: 0.5rem 1rem;
-            background: #2d3748;
-            border: none;
-            border-radius: 8px 0 0 8px;
-            color: white;
-            font-size: 0.9rem;
-            width: 60%;
-        }
-
-        .newsletter input:focus {
-            outline: 2px solid #667eea;
-        }
-
-        .newsletter button {
-            padding: 0.5rem 1rem;
-            background: #667eea;
-            border: none;
-            border-radius: 0 8px 8px 0;
-            color: white;
-            font-weight: 600;
-            cursor: pointer;
-            font-size: 0.9rem;
-            transition: background 0.3s ease;
-        }
-
-        .newsletter button:hover {
-            background: #5568d3;
-        }
-
-        .footer-bottom {
-            border-top: 1px solid #2d3748;
-            padding-top: 2rem;
-            text-align: center;
-            color: #a0aec0;
-            font-size: 0.9rem;
-        }
-
+        /* === NEW: Responsive CSS === */
         @media (max-width: 768px) {
-            .nav-links {
-                gap: 1rem;
+            .nav-container {
+                padding: 0.75rem 1.5rem; /* Mobile par thodi kam padding */
             }
             
+            /* Hamburger ko dikhao */
+            .hamburger-menu {
+                display: flex;
+                z-index: 101; /* Links ke upar */
+            }
+
+            /* Links ko hide karo aur dropdown jaisa banao */
+            .nav-links {
+                display: none; /* Default hide */
+                position: absolute;
+                top: 100%; /* Navbar ke theek neeche */
+                left: 0;
+                width: 100%;
+                background: white;
+                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+                flex-direction: column; /* Vertical stack */
+                align-items: center;
+                padding: 1rem 0;
+                gap: 1rem;
+            }
+
+            /* Yeh class JS se add hogi jab menu kholna hai */
+            .nav-links.active {
+                display: flex; /* Menu ko dikhao */
+            }
+
+            /* Aapka purana code */
             .header h1 {
                 font-size: 2rem;
             }
@@ -358,19 +155,64 @@ img {
                 grid-template-columns: 1fr;
             }
         }
+        
+        /* === Baaki ka CSS (koi change nahi) === */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .header { margin-bottom: 3rem; }
+        .header h1 { font-size: 3rem; color: #1a202c; margin-bottom: 1rem; }
+        .header p { font-size: 1.25rem; color: #4a5568; }
+        .section { margin-bottom: 4rem; }
+        .section-title { display: flex; align-items: center; font-size: 2rem; font-weight: bold; color: #1a202c; margin-bottom: 2rem; }
+        .section-title svg { margin-right: 1rem; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; }
+        .card { border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: all 0.3s ease; border: 2px solid; }
+        .card:hover { transform: translateY(-5px); box-shadow: 0 8px 15px rgba(0,0,0,0.2); }
+        .card-icon { width: 64px; height: 64px; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .card-icon svg { width: 32px; height: 32px; color: white; }
+        .card h3 { font-size: 1.25rem; font-weight: bold; color: #1a202c; margin-bottom: 1rem; }
+        .apply-btn { width: 100%; padding: 0.75rem 1.5rem; border: none; border-radius: 8px; font-size: 1rem; font-weight: 600; color: white; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .apply-btn:hover:not(:disabled) { opacity: 0.9; transform: scale(1.05); }
+        .apply-btn:active:not(:disabled) { transform: scale(0.95); }
+        .apply-btn:disabled { background: #a0aec0 !important; cursor: not-allowed; }
+        footer { background: #1a202c; color: white; margin-top: 4rem; }
+        .footer-container { max-width: 1400px; margin: 0 auto; padding: 3rem 2rem; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 2rem; }
+        .footer-column h3 { font-size: 1.25rem; margin-bottom: 1rem; }
+        .footer-column p, .footer-column a { color: #a0aec0; font-size: 0.9rem; line-height: 1.6; text-decoration: none; }
+        .footer-column a:hover { color: white; }
+        .footer-column ul { list-style: none; }
+        .footer-column ul li { margin-bottom: 0.5rem; }
+        .contact-item { display: flex; align-items: flex-start; gap: 0.5rem; margin-bottom: 0.75rem; }
+        .social-links { display: flex; gap: 1rem; margin-bottom: 1.5rem; }
+        .social-btn { background: #2d3748; padding: 0.75rem; border-radius: 8px; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.3s ease; }
+        .social-btn:hover { background: #667eea; }
+        .newsletter { margin-top: 1.5rem; }
+        .newsletter input { padding: 0.5rem 1rem; background: #2d3748; border: none; border-radius: 8px 0 0 8px; color: white; font-size: 0.9rem; width: 60%; }
+        .newsletter input:focus { outline: 2px solid #667eea; }
+        .newsletter button { padding: 0.5rem 1rem; background: #667eea; border: none; border-radius: 0 8px 8px 0; color: white; font-weight: 600; cursor: pointer; font-size: 0.9rem; transition: background 0.3s ease; }
+        .newsletter button:hover { background: #5568d3; }
+        .footer-bottom { border-top: 1px solid #2d3748; padding-top: 2rem; text-align: center; color: #a0aec0; font-size: 0.9rem; }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
     <nav>
         <div class="nav-container">
-           <div class="logo">
-    <img src="SKILL.png" alt="Skill Logo" class="logo-img">
-    SkillGrade
-</div>
+            <div class="logo">
+                <img src="SKILL.png" alt="Skill Logo" class="logo-img">
+                SkillGrade
+            </div>
 
+            <div class="hamburger-menu" id="hamburger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
 
-            <div class="nav-links">
+            <div class="nav-links" id="nav-links">
                 <button class="active" onclick="setActive(this)">🏠 Home</button>
                 <button onclick="setActive(this)">📄 About</button>
                 <button onclick="setActive(this)">📞 Contact</button>
@@ -378,15 +220,11 @@ img {
         </div>
     </nav>
 
-    <!-- Main Content -->
     <div class="container">
         <div class="header">
-            <h1>SkillGrade
-</h1>
+            <h1>SkillGrade</h1>
             <p>Explore opportunities across engineering branches and tech domains</p>
         </div>
-
-        <!-- Engineering Branches Section -->
         <section class="section">
             <h2 class="section-title">
                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#667eea" stroke-width="2">
@@ -397,8 +235,6 @@ img {
             </h2>
             <div class="grid" id="branches-grid"></div>
         </section>
-
-        <!-- Technology Domains Section -->
         <section class="section">
             <h2 class="section-title">
                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#9333ea" stroke-width="2">
@@ -411,17 +247,13 @@ img {
         </section>
     </div>
 
-    <!-- Footer -->
     <footer>
         <div class="footer-container">
             <div class="footer-grid">
-                <!-- About -->
                 <div class="footer-column">
                     <h3>About SkillGrade</h3>
                     <p>Connecting talented students with top companies for internship opportunities across various engineering disciplines and technology domains.</p>
                 </div>
-
-                <!-- Quick Links -->
                 <div class="footer-column">
                     <h3>Quick Links</h3>
                     <ul>
@@ -431,8 +263,6 @@ img {
                         <li><a href="#">FAQs</a></li>
                     </ul>
                 </div>
-
-                <!-- Contact -->
                 <div class="footer-column">
                     <h3>Contact Us</h3>
                     <div class="contact-item">
@@ -448,8 +278,6 @@ img {
                         <span>123 Innovation Drive, Tech Valley, CA 94025</span>
                     </div>
                 </div>
-
-                <!-- Social Media -->
                 <div class="footer-column">
                     <h3>Follow Us</h3>
                     <div class="social-links">
@@ -464,7 +292,6 @@ img {
                     </div>
                 </div>
             </div>
-
             <div class="footer-bottom">
                 <p>&copy; 2024 SkillGrade. All rights reserved. | Privacy Policy | Terms of Service</p>
             </div>
@@ -472,7 +299,18 @@ img {
     </footer>
 
     <script>
-        // Data
+        // === NEW: Hamburger Menu Toggle ===
+        // Yeh code DOM load hone ke baad chalega
+        document.addEventListener('DOMContentLoaded', function () {
+            const hamburger = document.getElementById('hamburger-menu');
+            const navLinks = document.getElementById('nav-links');
+
+            hamburger.addEventListener('click', function () {
+                navLinks.classList.toggle('active');
+            });
+        });
+
+        // Data (aapka purana code)
         const branches = [
             { id: 'cse', name: 'Computer Science & Engineering', icon: '💻', colors: { bg: '#dbeafe', border: '#93c5fd', gradient: 'linear-gradient(135deg, #3b82f6, #06b6d4)', btn: 'linear-gradient(135deg, #3b82f6, #06b6d4)' }},
             { id: 'it', name: 'Information Technology', icon: '🗄️', colors: { bg: '#f3e8ff', border: '#d8b4fe', gradient: 'linear-gradient(135deg, #a855f7, #ec4899)', btn: 'linear-gradient(135deg, #a855f7, #ec4899)' }},
@@ -482,7 +320,6 @@ img {
             { id: 'ce', name: 'Civil Engineering', icon: '🏗️', colors: { bg: '#f3f4f6', border: '#d1d5db', gradient: 'linear-gradient(135deg, #6b7280, #475569)', btn: 'linear-gradient(135deg, #6b7280, #475569)' }},
             { id: 'ch', name: 'Chemical Engineering', icon: '🧪', colors: { bg: '#e0e7ff', border: '#c7d2fe', gradient: 'linear-gradient(135deg, #6366f1, #8b5cf6)', btn: 'linear-gradient(135deg, #6366f1, #8b5cf6)' }}
         ];
-
         const techDomains = [
             { id: 'cloud', name: 'Cloud Computing', icon: '☁️', colors: { bg: '#e0f2fe', border: '#7dd3fc', gradient: 'linear-gradient(135deg, #0ea5e9, #3b82f6)', btn: 'linear-gradient(135deg, #0ea5e9, #3b82f6)' }},
             { id: 'ds', name: 'Data Science', icon: '📊', colors: { bg: '#d1fae5', border: '#6ee7b7', gradient: 'linear-gradient(135deg, #34d399, #14b8a6)', btn: 'linear-gradient(135deg, #34d399, #14b8a6)' }},
@@ -506,7 +343,6 @@ img {
             { id: 'mining', name: 'Data Mining', icon: '⛏️', colors: { bg: '#fef3c7', border: '#fcd34d', gradient: 'linear-gradient(135deg, #fbbf24, #eab308)', btn: 'linear-gradient(135deg, #fbbf24, #eab308)' }},
             { id: 'database', name: 'Database', icon: '🗃️', colors: { bg: '#d1fae5', border: '#6ee7b7', gradient: 'linear-gradient(135deg, #10b981, #14b8a6)', btn: 'linear-gradient(135deg, #10b981, #14b8a6)' }}
         ];
-
         const applied = new Set();
 
         // Functions
@@ -525,7 +361,6 @@ img {
                     Apply Now
                 </button>
             `;
-
             return card;
         }
 
@@ -541,11 +376,20 @@ img {
             }
         }
 
+        // === UPDATED: setActive Function ===
         function setActive(button) {
+            // Pehle sabse 'active' class hatao
             document.querySelectorAll('.nav-links button').forEach(btn => {
                 btn.classList.remove('active');
             });
+            // Phir sirf click kiye hue button par 'active' class lagao
             button.classList.add('active');
+
+            // NEW: Agar mobile par hain, toh link click karne ke baad menu ko band kar do
+            const navLinks = document.getElementById('nav-links');
+            if (window.innerWidth <= 768 && navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+            }
         }
 
         // Initialize
