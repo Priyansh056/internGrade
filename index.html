@@ -2,7 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+ 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>SkillGrade</title>
     <style>
         * {
@@ -10,6 +12,43 @@
             padding: 0;
             box-sizing: border-box;
         }
+
+        
+        .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+@media (min-width: 769px) {
+    .navbar {
+        flex-direction: row;
+    }
+}
+
+
+
+        
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
